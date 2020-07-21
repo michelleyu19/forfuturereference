@@ -1,0 +1,21 @@
+body, html {
+    font-family: "Roboto", sans-serif;
+    background: linear-gradient(to bottom, #FFDC97 0%,#DBEEFF 40%,#DFF0FF 100%);
+    height: 100%;
+  }
+
+#main {
+    color: rgb(11, 105, 74);
+}
+
+.logo {
+  background-image: url('img/joshuatree.jpg');
+  width: 100px;
+  height: 100px;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.active {
+  color: pink;
+}
