@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './QuestionListModalStyles.scss';
 
 class QuestionListModal extends Component {
   constructor(props) {
@@ -26,7 +27,7 @@ class QuestionListModal extends Component {
         <div className="modal-content">
           <h3>Select the questions you&apos;d like to answer:</h3>
           <button type="submit" onClick={() => onHide()}>Close</button>
-          {/* <button type="submit" className="close" onClick={() => onHide()}>&times;</button> */}
+          <button type="submit" className="close" onClick={() => onHide()}>&times;</button>
         </div>
       </div>
     );

@@ -8,14 +8,6 @@ body, html {
     color: black;
 }
 
-#navBar {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #dddddd; opacity:0.6;
-}
-
 /* MODAL */
 /* Background effect. It covers the entire site */
 .modal {
@@ -30,33 +22,13 @@ body, html {
     overflow: auto; /* Enable scroll if needed */
     padding-top: 80px; /* Location of the content container */
 }
-/* Modal content */
-.modal-content {
-    background-color: white;
-    width: 70%; /* Width in proportion to its parent container*/
-    max-width: 640px; /* Max width where it stops expanding */
-    height: 70%; /* Height in proportion to its parent container */
-    margin: auto; /* Auto margin according to the element width */
-    padding: 10px;
-    border: 1px solid black;
-    border-radius: 20px; /* Optional. Rounds container corners */
-}
-/* Close button */
-.close {
-   color: #aaaaaa;
-   float: right; /* Positioned to the right of the parent container whichever size it is */
-   font-size: 25px;
-   font-weight: bold;
-}
-.close:hover, 
-.close:focus {
-    color: #000;
-    // text-decoration: none;
-    cursor: pointer;
-}
 
-.questionListModal {
-  background: white;
+#navBar {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #dddddd; opacity:0.6;
 }
 
 .active {
