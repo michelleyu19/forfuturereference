@@ -1,48 +1,26 @@
 import React from 'react';
 import {
-  BrowserRouter as Router, Route, NavLink, Switch,
+  BrowserRouter as Router, Route, Switch,
 } from 'react-router-dom';
-import Counter from './counter';
-import Controls from './controls';
+import About from './About';
+import Homepage from './Homepage';
+import LovedOneResponsePage from './LovedOneResponsePage';
+import NavBar from './NavBar';
+import SelfResponsePage from './SelfResponsePage';
 
-const About = (props) => {
-  return <div> All there is to know about me </div>;
-};
-const Welcome = (props) => {
-  return (
-    <div>
-      <Counter />
-      <Controls />
-    </div>
-  );
-};
-const Nav = (props) => {
-  return (
-    <nav>
-      <ul>
-        <li><NavLink to="/" exact>Home</NavLink></li>
-        <li><NavLink to="/about">About</NavLink></li>
-        <li><NavLink to="/test/id1">test id1</NavLink></li>
-        <li><NavLink to="/test/id2">test id2</NavLink></li>
-      </ul>
-    </nav>
-  );
-};
-const Test = (props) => {
-  return <div> ID: {props.match.params.id} </div>;
-};
 const FallBack = (props) => {
   return <div>URL Not Found</div>;
 };
-const App = (props) => {
+const App = () => {
   return (
     <Router>
       <div>
-        <Nav />
+        <NavBar />
         <Switch>
-          <Route exact path="/" component={Welcome} />
+          <Route exact path="/" component={Homepage} />
           <Route path="/about" component={About} />
-          <Route exact path="/test/:id" component={Test} />
+          <Route path="/self" component={SelfResponsePage} />
+          <Route path="/lovedOne" component={LovedOneResponsePage} />
           <Route component={FallBack} />
         </Switch>
       </div>
