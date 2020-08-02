@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-indent */
 import React from 'react';
 
-const WecomeText = () => {
+export const WelcomeText = () => {
   return (
     <div>
       <div>
@@ -17,4 +17,10 @@ const WecomeText = () => {
   );
 };
 
-export default WecomeText;
+export const otherText = () => {
+  return (
+    <div>
+      example
+    </div>
+  );
+};

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
-import WelcomeText from './Text';
+import { WelcomeText } from './Text';
 
 class Homepage extends Component {
   constructor(props) {
