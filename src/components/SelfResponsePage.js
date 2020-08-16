@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import QuestionListModal from './QuestionListModal';
+import QuestionForm from './QuestionForm';
 
 class SelfResponsePage extends Component {
   constructor(props) {
@@ -17,6 +18,7 @@ class SelfResponsePage extends Component {
           show={this.state.openModal}
           onHide={() => this.setState({ openModal: false })}
         />
+        <QuestionForm />
         <button type="button" onClick={() => this.setState({ openModal: true })}> Add Questions</button>
 
       </div>

@@ -1,8 +1,8 @@
 {
-  "name": "web-starterpack",
+  "name": "for-future-reference",
   "version": "1.0.0",
   "main": "src/index.js",
-  "repository": "https://github.com/michelleyu19/web-starterpack.git",
+  "repository": "https://github.com/michelleyu19/forfuturereference.git",
   "author": "Michelle Yu <yu.michelle97@gmail.com>",
   "license": "MIT",
   "scripts": {
