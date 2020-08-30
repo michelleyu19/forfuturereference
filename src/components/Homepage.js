@@ -13,34 +13,40 @@ class Homepage extends Component {
   render() {
     const renderIntro = () => {
       return (
-        <div>
-          <h2>What is for future reference?</h2>
-          <WelcomeText />
-          <div />
-        </div>
+        <font color = "#FFFDEC">
+          <div>
+            <h2>What is for future reference?</h2>
+            <WelcomeText />
+            <div />
+          </div>
+        </font>
       );
     };
     const renderReadyToTry = () => {
       return (
-        <div>
-          <h2>Ready to Try?</h2>
+        <font color = "#FFFDEC">
           <div>
-            <nav>
-              <ul style={{ listStyleType: 'none' }}>
-                <li><NavLink to="/self" exact>Send a Message to My Future Self</NavLink></li>
-                <li><NavLink to="/lovedOne">Send a Message to a Loved One</NavLink></li>
-              </ul>
-            </nav>
+            <h2>Ready to Try?</h2>
+            <div>
+              <nav>
+                <ul style={{ listStyleType: 'none' }}>
+                  <li><NavLink to="/self" exact>Send a Message to My Future Self</NavLink></li>
+                  <li><NavLink to="/lovedOne">Send a Message to a Loved One</NavLink></li>
+                </ul>
+              </nav>
+            </div>
           </div>
-        </div>
+        </font>
       );
     };
     return (
-      <div>
-        <h1>For Future Reference</h1>
-        {renderIntro()}
-        {renderReadyToTry()}
-      </div>
+      <font color = "#FFFDEC">
+        <div>
+          <h1>For Future Reference</h1>
+          {renderIntro()}
+          {renderReadyToTry()}
+        </div>
+      </font>
     );
   }
 }

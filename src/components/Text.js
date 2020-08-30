@@ -33,3 +33,16 @@ const q3 = { id: 2, question: 'If you could go back and offer yourself advice on
 const q4 = { id: 3, question: 'Write a custom message' };
 const questions = [q1, q2, q3, q4];
 export const SelfQuestionList = questions;
+
+export const AboutText = () => {
+  return (
+    <div>
+      <p>For Future Reference started off as an idea between 4 friends who wanted to find a way to preserve our self reflections from the year 2020.
+      </p>
+      <p>2020 is unique because the entire world is discovering that some things are truly beyond our control. The more free time we have, the more time we have to think and reflect on our lives and where we’re headed towards.
+      </p>
+      <p>For Future Reference is a tool that helps people to reflect and treasure relationships with one another by sending out emails to oneself / loved ones into the future.
+      </p>
+    </div>
+  );
+};
