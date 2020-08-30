@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { SelfQuestionList } from './Text';
+// import { SelfQuestionList } from './Text';
+// import QuestionListItem from './QuestionListItem';
 import './QuestionListModalStyles.scss';
 
 class QuestionListModal extends Component {
@@ -15,11 +16,10 @@ class QuestionListModal extends Component {
       * show: boolean to display modal
       * onHide: callback function that closes the Modal
     */
-    const { show, onHide } = this.props;
+    const { show, onHide, questionList } = this.props;
     const divStyle = {
       display: show ? 'block' : 'none',
     };
-    const questions = SelfQuestionList.map((item) => <li key={item.name}>{item}</li>);
 
     return (
       <div className="modal"
@@ -27,7 +27,7 @@ class QuestionListModal extends Component {
       >
         <div className="modal-content">
           <h3>Select one or more questions you&apos;d like to answer:</h3>
-          <ul>{questions}</ul>
+          <ul>{questionList}</ul>
           <button type="submit" onClick={() => onHide()}>Save</button>
           <button type="submit" className="close" onClick={() => onHide()}>&times;</button>
         </div>

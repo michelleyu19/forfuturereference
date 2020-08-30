@@ -1,6 +1,5 @@
 /* eslint-disable react/jsx-indent */
 import React from 'react';
-import QuestionListItem from './QuestionListItem';
 
 // Homepage About Text
 export const WelcomeText = () => {
@@ -28,8 +27,9 @@ export const otherText = () => {
 };
 
 // Self Reflection Questions
-const q1 = <QuestionListItem message="What did you most take for granted before quarantine? What does that mean to you now?" />;
-const q2 = <QuestionListItem message="Has this time made you more or less desensitized to life? How do you feel about your answer?" />;
-const q3 = <QuestionListItem message="Write a custom message" />;
-const questions = [q1, q2, q3];
+const q1 = { id: 0, question: 'What did you most take for granted before quarantine? What does that mean to you now?' };
+const q2 = { id: 1, question: 'Has this time made you more or less desensitized to life? How do you feel about your answer?' };
+const q3 = { id: 2, question: 'If you could go back and offer yourself advice on the first day of quarantine, what would it be?' };
+const q4 = { id: 3, question: 'Write a custom message' };
+const questions = [q1, q2, q3, q4];
 export const SelfQuestionList = questions;

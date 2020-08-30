@@ -16,27 +16,13 @@ class QuestionForm extends Component {
   }
 
   render() {
+    const { questionList } = this.props;
     return (
-      <form>
-        <p>What did you most take for granted before quarantine? What does that mean to you now?</p>
-        <textarea
-          type="text"
-          name="q1"
-          onChange={this.myChangeHandler}
-        />
-        <p>Has this time made you more or less desensitized to life? How do you feel about your answer?</p>
-        <textarea
-          type="text"
-          name="q2"
-          onChange={this.myChangeHandler}
-        />
-        <p>Write a custom note:</p>
-        <textarea
-          type="text"
-          name="q3"
-          onChange={this.myChangeHandler}
-        />
-      </form>
+      <div>
+        <form>
+          <ul>{questionList}</ul>
+        </form>
+      </div>
     );
   }
 }
