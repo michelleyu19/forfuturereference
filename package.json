@@ -6,11 +6,11 @@
   "author": "Michelle Yu <yu.michelle97@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "NODE_ENV=development webpack-dev-server",
+    "start": "SET NODE_ENV=development& webpack-dev-server",
     "test": "eslint src",
-    "build": "yarn clean; NODE_ENV=production webpack --colors",
+    "winbuild": "yarn clean & SET NODE_ENV=production & webpack --colors",
     "clean": "rimraf dist",
-    "deploy": "yarn build; surge -p dist -d michelle-test123.surge.sh; yarn clean"
+    "windeploy": "yarn winbuild & surge -p dist -d MYCOOLSTARTERPACKNAME.surge.sh & yarn clean"
   },
   "devDependencies": {
     "@babel/core": "^7.10.5",
