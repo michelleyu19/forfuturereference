@@ -26,10 +26,10 @@ class QuestionListModal extends Component {
         style={divStyle}
       >
         <div className="modal-content">
+          <button type="submit" className="close" onClick={() => onHide()}>&times;</button>
           <h3>Select one or more questions you&apos;d like to answer:</h3>
           <ul>{questionList}</ul>
           <button type="submit" onClick={() => onHide()}>Save</button>
-          <button type="submit" className="close" onClick={() => onHide()}>&times;</button>
         </div>
       </div>
     );

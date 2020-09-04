@@ -22,3 +22,6 @@ ReactDOM.render(
   </Provider>,
   document.getElementById('main'),
 );
+
+// without redux
+// ReactDOM.render(<App />, document.getElementById('main'));

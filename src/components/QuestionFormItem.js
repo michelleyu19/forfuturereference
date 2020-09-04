@@ -14,7 +14,9 @@ class QuestionFormItem extends Component {
   }
 
   render() {
-    const { question, questionId, show } = this.props;
+    const {
+      question, questionId, answer, show, handleAnswerInput,
+    } = this.props;
     const divStyle = {
       display: show ? 'block' : 'none',
     };
@@ -24,7 +26,8 @@ class QuestionFormItem extends Component {
         <textarea
           type="text"
           name={questionId}
-          onChange={this.myChangeHandler}
+          value={answer}
+          onChange={(e) => handleAnswerInput(e, questionId)}
         />
       </div>
     );
