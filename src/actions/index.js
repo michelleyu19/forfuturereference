@@ -12,7 +12,7 @@ export const ActionTypes = {
 export function createResponse(response, history) {
   return (dispatch) => {
     axios.post(`${ROOT_URL}/responses`, response).then(() => {
-      history.push('/');
+      history.push('/sent');
       console.log('success');
     }).catch((error) => {
       console.log(error);
