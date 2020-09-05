@@ -4,18 +4,12 @@ import axios from 'axios';
 const ROOT_URL = 'https://for-future-reference.herokuapp.com/api';
 // const API_KEY = 'ffrapi';
 
-// keys for actiontypes
-export const ActionTypes = {
-  CREATE_RESPONSE: 'CREATE_RESPONSE',
-};
-
+// eslint-disable-next-line import/prefer-default-export
 export function createResponse(response, history) {
-  return (dispatch) => {
-    axios.post(`${ROOT_URL}/responses`, response).then(() => {
-      history.push('/sent');
-      console.log('success');
-    }).catch((error) => {
-      console.log(error);
-    });
-  };
+  axios.post(`${ROOT_URL}/responses`, response).then(() => {
+    history.push('/sent');
+    console.log('success');
+  }).catch((error) => {
+    console.log(error);
+  });
 }

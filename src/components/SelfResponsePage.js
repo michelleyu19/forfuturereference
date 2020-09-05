@@ -1,14 +1,11 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
-/* eslint-disable react/no-unused-state */
 import React, { Component } from 'react';
-import { withRouter } from 'react-router-dom';
-import { connect } from 'react-redux';
 import QuestionForm from './QuestionForm';
 import QuestionFormItem from './QuestionFormItem';
 import QuestionListItem from './QuestionListItem';
 import QuestionListModal from './QuestionListModal';
 import { SelfQuestionList } from './Text';
-import { createResponse } from '../actions';
+import * as db from '../actions/index';
 
 class SelfResponsePage extends Component {
   constructor(props) {
@@ -68,7 +65,7 @@ class SelfResponsePage extends Component {
       sendDate,
     };
     console.log(fields);
-    this.props.createResponse(fields, this.props.history);
+    db.createResponse(fields, this.props.history);
   }
 
   render() {
@@ -132,4 +129,4 @@ class SelfResponsePage extends Component {
   }
 }
 
-export default withRouter(connect(null, { createResponse })(SelfResponsePage));
+export default SelfResponsePage;
