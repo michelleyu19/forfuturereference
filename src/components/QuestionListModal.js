@@ -1,6 +1,4 @@
 import React from 'react';
-// import { SelfQuestionList } from './Text';
-// import QuestionListItem from './QuestionListItem';
 import './QuestionListModalStyles.scss';
 
 const QuestionListModal = (props) => {
@@ -8,7 +6,9 @@ const QuestionListModal = (props) => {
       * show: boolean to display modal
       * onHide: callback function that closes the Modal
     */
-  const { show, onHide, questionList } = props;
+  const {
+    show, onQuit, onSave, questionList,
+  } = props;
   const divStyle = {
     display: show ? 'block' : 'none',
   };
@@ -18,10 +18,10 @@ const QuestionListModal = (props) => {
       style={divStyle}
     >
       <div className="modal-content">
-        <button type="submit" className="close" onClick={() => onHide()}>&times;</button>
+        <button type="submit" className="close" onClick={() => onQuit()}>&times;</button>
         <h3>Select one or more questions you&apos;d like to answer:</h3>
         <ul>{questionList}</ul>
-        <button type="submit" onClick={() => onHide()}>Save</button>
+        <button type="submit" onClick={() => onSave()}>Save</button>
       </div>
     </div>
   );

@@ -11,7 +11,7 @@ class SelfResponsePage extends Component {
   constructor(props) {
     super(props);
     const questions = SelfQuestionList.map((item) => ({
-      id: item.id, question: item.question, answer: '', show: false,
+      id: item.id, question: item.question, answer: '', show: false, checked: false,
     }
     ));
     this.state = {
@@ -22,6 +22,8 @@ class SelfResponsePage extends Component {
       yearsToSend: '1',
     };
     this.onCheckboxClick = this.onCheckboxClick.bind(this);
+    this.onModalSave = this.onModalSave.bind(this);
+    this.onModalQuit = this.onModalQuit.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.handleAnswerInputChange = this.handleAnswerInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -30,9 +32,31 @@ class SelfResponsePage extends Component {
   onCheckboxClick(id) {
     this.setState((prevState) => ({
       questions: prevState.questions.map(
-        (el) => (el.id === id ? { ...el, show: !prevState.questions[id].show } : el),
+        (el) => (el.id === id ? { ...el, checked: !prevState.questions[id].checked } : el),
       ),
     }));
+  }
+
+  onModalSave() {
+    console.log('before save:', this.state.questions);
+    this.setState((prevState) => ({
+      openModal: false,
+      questions: prevState.questions.map(
+        (el) => ({ ...el, show: el.checked }),
+      ),
+    }));
+    console.log('after save:', this.state.questions);
+  }
+
+  onModalQuit() {
+    console.log('before quit:', this.state.questions);
+    this.setState((prevState) => ({
+      openModal: false,
+      questions: prevState.questions.map(
+        (el) => ({ ...el, checked: el.show }),
+      ),
+    }));
+    console.log('after quit:', this.state.questions);
   }
 
   handleChange = (event) => {
@@ -71,7 +95,7 @@ class SelfResponsePage extends Component {
   render() {
     const questionsList = this.state.questions.map((item) => (
       <li key={item.id}>
-        <QuestionListItem message={item.question} checked={item.show} id={item.id} handleCheckboxClick={this.onCheckboxClick} />
+        <QuestionListItem message={item.question} checked={item.checked} id={item.id} handleCheckboxClick={this.onCheckboxClick} />
       </li>
     ));
     const questionsForm = this.state.questions.map((item) => (
@@ -113,10 +137,11 @@ class SelfResponsePage extends Component {
             </label>
           </form>
         </div>
-        <header>To My Future Self...</header>
+        <div>To My Future Self...</div>
         <QuestionListModal
           show={this.state.openModal}
-          onHide={() => this.setState({ openModal: false })}
+          onQuit={this.onModalQuit}
+          onSave={this.onModalSave}
           questionList={questionsList}
         />
         <QuestionForm
