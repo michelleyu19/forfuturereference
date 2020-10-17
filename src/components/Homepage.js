@@ -11,20 +11,37 @@ class Homepage extends Component {
   }
 
   render() {
+    // { /* const renderIntro = () => {
+    //     return (
+    //       <font color="#FFFDEC">
+    //     <div>
+    //       <h2>What is for future reference?</h2>
+    //       <WelcomeText />
+    //       <div />
+    //     </div>
+    //   </font>
+    //     );
+    //   }; */ }
     const renderIntro = () => {
       return (
-        <font color = "#FFFDEC">
-          <div>
-            <h2>What is for future reference?</h2>
-            <WelcomeText />
-            <div />
+        <div>
+
+          <div><WelcomeText /></div>
+          {/* <div className="modal"> */}
+          <div className="flexbox-boxes">
+            <div className="item-black" />
+            <div className="item-white" />
+            <div className="item-black" />
+            <div className="item-white" />
           </div>
-        </font>
+        </div>
+        // </div>
+
       );
     };
     const renderReadyToTry = () => {
       return (
-        <font color = "#FFFDEC">
+        <font color="#FFFDEC">
           <div>
             <h2>Ready to Try?</h2>
             <div>
@@ -40,7 +57,7 @@ class Homepage extends Component {
       );
     };
     return (
-      <font color = "#FFFDEC">
+      <font color="#FFFDEC">
         <div>
           <h1>For Future Reference</h1>
           {renderIntro()}
