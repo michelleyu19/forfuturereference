@@ -8,7 +8,8 @@ const QuestionListItem = (props) => {
     <div className="row">
       <div className="col-md-12">
         <input type="checkbox" checked={checked} onChange={() => handleCheckboxClick(id)} />&nbsp;{message}
-        <hr />
+        <br />
+        <br />
       </div>
     </div>
   );
