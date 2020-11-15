@@ -24,6 +24,7 @@ class Homepage extends Component {
     //   }; */ }
     const renderIntro = () => {
       return (
+<<<<<<< Updated upstream
         <div>
 
           <div><WelcomeText /></div>
@@ -37,11 +38,24 @@ class Homepage extends Component {
         </div>
         // </div>
 
+=======
+        <font color = "#FFFDEC">
+          <div>
+            <h2>What is for future reference?</h2>
+            <WelcomeText />
+            <div />
+          </div>
+        </font>
+>>>>>>> Stashed changes
       );
     };
     const renderReadyToTry = () => {
       return (
+<<<<<<< Updated upstream
         <font color="#FFFDEC">
+=======
+        <font color = "#FFFDEC">
+>>>>>>> Stashed changes
           <div>
             <h2>Ready to Try?</h2>
             <div>
@@ -57,7 +71,11 @@ class Homepage extends Component {
       );
     };
     return (
+<<<<<<< Updated upstream
       <font color="#FFFDEC">
+=======
+      <font color = "#FFFDEC">
+>>>>>>> Stashed changes
         <div>
           <h1>For Future Reference</h1>
           {renderIntro()}
