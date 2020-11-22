@@ -1,13 +1,12 @@
 import React from 'react';
+import './QuestionFormStyles.scss';
 
 const QuestionForm = (props) => {
   const { questionList } = props;
   return (
-    <div>
-      <form>
-        <ul>{questionList}</ul>
-      </form>
-    </div>
+    <form>
+      <ul>{questionList}</ul>
+    </form>
   );
 };
 
