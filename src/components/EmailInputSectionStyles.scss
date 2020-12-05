@@ -9,4 +9,22 @@ input {
   outline: 0;
   background: transparent;
   border-bottom: 1px solid white;
+  color: white;
+  opacity: 50%;
+}
+
+select {
+  border: none;
+  border-bottom: 1px solid white;
+  background-color: transparent;
+  color: white;
+  opacity: 50%;
+}
+
+.horizontalInputSection {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  color: white;
+  font-family: neue-haas-grotesk-display, sans-serif;
 }

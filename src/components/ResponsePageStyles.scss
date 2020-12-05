@@ -1,8 +1,21 @@
+#selfResponsePageWhole{
+  align-items: center;
+  height: inherit;
+}
+
 .response-page {
   background-image: url(../img/backgrounds/responseBackground.png);
   background-size: cover;
   display: flex;
   flex-direction: column;
-  justify-content: center;   
   align-items: center; 
+  height: inherit;
+  align-self: flex-start;
+}
+
+.modal {
+  position: absolute;
+  z-index: 10;
+  width: 100%;
+  margin-top: 5%;
 }

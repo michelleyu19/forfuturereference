@@ -19,7 +19,10 @@ class SelfResponsePage extends Component {
     this.state = {
       openModal: true,
       questions,
-      senderName: 'Enter Your Name Here',
+      addresseeName: 'My Future Self',
+      authorName: 'My 2020 Self',
+      senderFirstName: 'First Name Here',
+      senderLastName: 'Last Name Here',
       recipientEmails: ['Enter Email Address'],
       yearsToSend: '1',
     };
@@ -106,25 +109,47 @@ class SelfResponsePage extends Component {
       </li>
     ));
     return (
-      <div className="response-page">
-        <div>To My Future Self...</div>
+      <div id="selfResponsePageWhole">
         <QuestionListModal
+          className="modal"
           show={this.state.openModal}
           onQuit={this.onModalQuit}
           onSave={this.onModalSave}
           questionList={questionsList}
         />
-        <QuestionForm
-          questionList={questionsForm}
-        />
-        <button type="button" onClick={() => this.setState({ openModal: true })}> Add Questions</button>
-        <EmailInputSection
-          senderName={this.state.senderName}
-          recipientEmails={this.state.recipientEmails}
-          yearsToSend={this.state.yearsToSend}
-          handleChange={this.handleChange}
-        />
-        <button type="button" onClick={this.handleSubmit}> Submit</button>
+        <div className="response-page">
+          <div>Answer our questions or write your own custom message!</div>
+          <label>
+            Dear
+            <input
+              name="addresseeName"
+              type="text"
+              value={this.state.addresseeName}
+              onChange={this.handleChange}
+            />
+          </label>
+          <QuestionForm
+            questionList={questionsForm}
+          />
+          <button type="button" onClick={() => this.setState({ openModal: true })}> Add Questions</button>
+          <label>
+            Sincerely,
+            <input
+              name="authorName"
+              type="text"
+              value={this.state.authorName}
+              onChange={this.handleChange}
+            />
+          </label>
+          <EmailInputSection
+            senderFirstName={this.state.senderFirstName}
+            senderLastName={this.state.senderLastName}
+            recipientEmails={this.state.recipientEmails}
+            yearsToSend={this.state.yearsToSend}
+            handleChange={this.handleChange}
+          />
+          <button type="button" onClick={this.handleSubmit}> Submit</button>
+        </div>
       </div>
     );
   }

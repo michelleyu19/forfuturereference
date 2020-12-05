@@ -15,17 +15,15 @@ const FallBack = (props) => {
 const App = () => {
   return (
     <Router>
-      <div>
-        <NavBar />
-        <Switch>
-          <Route exact path="/" component={Homepage} />
-          <Route path="/about" component={About} />
-          <Route path="/self" component={SelfResponsePage} />
-          <Route path="/lovedOne" component={LovedOneResponsePage} />
-          <Route path="/sent" component={MessageSentPage} />
-          <Route component={FallBack} />
-        </Switch>
-      </div>
+      <NavBar />
+      <Switch id="pageComponent">
+        <Route exact path="/" component={Homepage} />
+        <Route path="/about" component={About} />
+        <Route path="/self" component={SelfResponsePage} />
+        <Route path="/lovedOne" component={LovedOneResponsePage} />
+        <Route path="/sent" component={MessageSentPage} />
+        <Route component={FallBack} />
+      </Switch>
     </Router>
   );
 };
