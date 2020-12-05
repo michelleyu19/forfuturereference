@@ -5,6 +5,7 @@ import {
 import About from './About';
 import Homepage from './Homepage';
 import LovedOneResponsePage from './LovedOneResponsePage';
+import MessageSentPage from './MessageSentPage';
 import NavBar from './NavBar';
 import SelfResponsePage from './SelfResponsePage';
 
@@ -21,6 +22,7 @@ const App = () => {
           <Route path="/about" component={About} />
           <Route path="/self" component={SelfResponsePage} />
           <Route path="/lovedOne" component={LovedOneResponsePage} />
+          <Route path="/sent" component={MessageSentPage} />
           <Route component={FallBack} />
         </Switch>
       </div>

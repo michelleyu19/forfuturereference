@@ -6074,6 +6074,11 @@ react-dom@^16.13.1:
     prop-types "^15.6.2"
     scheduler "^0.19.1"
 
+react-faq-component@^1.0.8:
+  version "1.0.8"
+  resolved "https://registry.yarnpkg.com/react-faq-component/-/react-faq-component-1.0.8.tgz#5d8a5498312bac23c1f44de7fefeb10a972fce78"
+  integrity sha512-2JhxUrHSktj4BVuXbg+MbyHqyd+hQ739/6zyPR6Do7J6sBCH9tH2axVcjor6QGgcOPAidy9WZeCyw9y3FIvYCw==
+
 react-is@^16.3.2, react-is@^16.6.0, react-is@^16.7.0, react-is@^16.8.1, react-is@^16.9.0:
   version "16.13.1"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"

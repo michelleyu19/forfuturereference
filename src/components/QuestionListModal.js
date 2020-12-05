@@ -1,39 +1,30 @@
-import React, { Component } from 'react';
-// import { SelfQuestionList } from './Text';
-// import QuestionListItem from './QuestionListItem';
+import React from 'react';
 import './QuestionListModalStyles.scss';
 
-class QuestionListModal extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-
-    };
-  }
-
-  render() {
-    /**
+const QuestionListModal = (props) => {
+  /**
       * show: boolean to display modal
       * onHide: callback function that closes the Modal
     */
-    const { show, onHide, questionList } = this.props;
-    const divStyle = {
-      display: show ? 'block' : 'none',
-    };
+  const {
+    show, onQuit, onSave, questionList,
+  } = props;
+  const divStyle = {
+    display: show ? 'block' : 'none',
+  };
 
-    return (
-      <div className="modal"
-        style={divStyle}
-      >
-        <div className="modal-content">
-          <h3>Select one or more questions you&apos;d like to answer:</h3>
-          <ul>{questionList}</ul>
-          <button type="submit" onClick={() => onHide()}>Save</button>
-          <button type="submit" className="close" onClick={() => onHide()}>&times;</button>
-        </div>
+  return (
+    <div className="modal"
+      style={divStyle}
+    >
+      <div className="modal-content">
+        <button type="submit" className="close" onClick={() => onQuit()}>&times;</button>
+        <h3>Select one or more questions you&apos;d like to answer:</h3>
+        <ul>{questionList}</ul>
+        <button type="submit" onClick={() => onSave()}>Save</button>
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
 
 export default QuestionListModal;
