@@ -1,4 +1,5 @@
 import React from 'react';
+import './QuestionFormStyles.scss';
 
 const QuestionFormItem = (props) => {
   const {
@@ -9,13 +10,16 @@ const QuestionFormItem = (props) => {
   };
   return (
     <div style={divStyle}>
-      <p>{question}</p>
-      <textarea
-        type="text"
-        name={questionId}
-        value={answer}
-        onChange={(e) => handleAnswerInput(e, questionId)}
-      />
+      <div className="questionFormItem">
+        <p>{question}</p>
+        <textarea
+          id="questionResponseInputBox"
+          type="text"
+          name={questionId}
+          value={answer}
+          onChange={(e) => handleAnswerInput(e, questionId)}
+        />
+      </div>
     </div>
   );
 };

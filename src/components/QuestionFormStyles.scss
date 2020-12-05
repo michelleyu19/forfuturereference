@@ -1,0 +1,19 @@
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+}
+
+.questionFormItem {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#questionResponseInputBox {
+  display:inline-block;
+  width:60%;
+  overflow-y: scroll;
+}

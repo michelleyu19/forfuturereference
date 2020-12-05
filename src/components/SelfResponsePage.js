@@ -1,10 +1,12 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { Component } from 'react';
+import EmailInputSection from './EmailInputSection';
 import QuestionForm from './QuestionForm';
 import QuestionFormItem from './QuestionFormItem';
 import QuestionListItem from './QuestionListItem';
 import QuestionListModal from './QuestionListModal';
 import { SelfQuestionList } from './Text';
+import './ResponsePageStyles.scss';
 import * as db from '../actions/index';
 
 class SelfResponsePage extends Component {
@@ -17,8 +19,8 @@ class SelfResponsePage extends Component {
     this.state = {
       openModal: true,
       questions,
-      senderName: '',
-      email: '',
+      senderName: 'Enter Your Name Here',
+      recipientEmails: ['Enter Email Address'],
       yearsToSend: '1',
     };
     this.onCheckboxClick = this.onCheckboxClick.bind(this);
@@ -84,7 +86,7 @@ class SelfResponsePage extends Component {
     const fields = {
       senderName: this.state.senderName,
       senderEmail: this.state.email,
-      recipientEmails: [this.state.email],
+      recipientEmails: this.state.recipientEmails,
       reflectionText: savedQuestions,
       sendDate,
     };
@@ -104,39 +106,7 @@ class SelfResponsePage extends Component {
       </li>
     ));
     return (
-      <div>
-        <div>
-          <form>
-            <label>
-              Dear:
-              <input
-                name="senderName"
-                type="text"
-                value={this.state.senderName}
-                onChange={this.handleChange}
-              />
-            </label>
-            <br />
-            <label>
-              Email:
-              <input
-                name="email"
-                type="text"
-                value={this.state.email}
-                onChange={this.handleChange}
-              />
-            </label>
-            <label>
-              Send me an email in:
-              <select value={this.state.yearsToSend} onChange={this.handleChange}>
-                <option value=".5">6 months</option>
-                <option value="1">1 year</option>
-                <option value="1.5">1.5 years</option>
-                <option value="2">2 years</option>
-              </select>
-            </label>
-          </form>
-        </div>
+      <div className="response-page">
         <div>To My Future Self...</div>
         <QuestionListModal
           show={this.state.openModal}
@@ -148,6 +118,12 @@ class SelfResponsePage extends Component {
           questionList={questionsForm}
         />
         <button type="button" onClick={() => this.setState({ openModal: true })}> Add Questions</button>
+        <EmailInputSection
+          senderName={this.state.senderName}
+          recipientEmails={this.state.recipientEmails}
+          yearsToSend={this.state.yearsToSend}
+          handleChange={this.handleChange}
+        />
         <button type="button" onClick={this.handleSubmit}> Submit</button>
       </div>
     );
