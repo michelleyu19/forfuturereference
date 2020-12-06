@@ -19,9 +19,9 @@ const QuestionListModal = (props) => {
     >
       <div className="modal-content">
         <button type="submit" className="close" onClick={() => onQuit()}>&times;</button>
-        <h3>Select one or more questions to answer:</h3>
+        <div id="questionHeader">Select one or more questions to answer:</div>
         <ul className="list-scroll">{questionList}</ul>
-        <button type="submit" onClick={() => onSave()}>Save</button>
+        <button className="yellowButton" type="submit" onClick={() => onSave()}>Save</button>
       </div>
     </div>
   );

@@ -19,8 +19,8 @@ class SelfResponsePage extends Component {
     this.state = {
       openModal: true,
       questions,
-      addresseeName: 'My Future Self',
-      authorName: 'My 2020 Self',
+      addresseeName: 'Future Self',
+      authorName: 'Your 2020 Self',
       senderFirstName: 'First Name Here',
       senderLastName: 'Last Name Here',
       recipientEmails: ['Enter Email Address'],
@@ -30,6 +30,7 @@ class SelfResponsePage extends Component {
     this.onModalSave = this.onModalSave.bind(this);
     this.onModalQuit = this.onModalQuit.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.handleArrayChange = this.handleArrayChange.bind(this);
     this.handleAnswerInputChange = this.handleAnswerInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -38,6 +39,16 @@ class SelfResponsePage extends Component {
     const nam = event.target.name;
     const val = event.target.value;
     this.setState({ [nam]: val });
+  }
+
+  handleArrayChange(event, index) {
+    const nam = event.target.name;
+    const val = event.target.value;
+    const newArray = this.state[nam];
+    newArray[index] = val;
+    this.setState((prevState) => ({
+      [nam]: newArray,
+    }));
   }
 
   handleAnswerInputChange(event, id) {
@@ -49,7 +60,7 @@ class SelfResponsePage extends Component {
     }));
   }
 
-  handleSubmit(event) {
+  handleSubmit() {
     const sendDate = new Date();
     sendDate.setMonth(sendDate.getMonth() + (12 * parseInt(this.state.yearsToSend, 10)));
     const savedQuestions = this.state.questions.filter((item) => item.show).map((q) => ({
@@ -87,14 +98,12 @@ class SelfResponsePage extends Component {
   }
 
   onModalQuit() {
-    console.log('before quit:', this.state.questions);
     this.setState((prevState) => ({
       openModal: false,
       questions: prevState.questions.map(
         (el) => ({ ...el, checked: el.show }),
       ),
     }));
-    console.log('after quit:', this.state.questions);
   }
 
   render() {
@@ -119,9 +128,10 @@ class SelfResponsePage extends Component {
         />
         <div className="response-page">
           <div>Answer our questions or write your own custom message!</div>
-          <label>
+          <label className="salutationAndClosing">
             Dear
             <input
+              className="salutationAndClosing"
               name="addresseeName"
               type="text"
               value={this.state.addresseeName}
@@ -131,10 +141,11 @@ class SelfResponsePage extends Component {
           <QuestionForm
             questionList={questionsForm}
           />
-          <button type="button" onClick={() => this.setState({ openModal: true })}> Add Questions</button>
-          <label>
+          <button type="button" className="yellowButton" onClick={() => this.setState({ openModal: true })}> Add Questions</button>
+          <label className="salutationAndClosing">
             Sincerely,
             <input
+              className="salutationAndClosing"
               name="authorName"
               type="text"
               value={this.state.authorName}
@@ -145,6 +156,7 @@ class SelfResponsePage extends Component {
             senderFirstName={this.state.senderFirstName}
             senderLastName={this.state.senderLastName}
             recipientEmails={this.state.recipientEmails}
+            handleRecipientEmailsChange={this.handleArrayChange}
             yearsToSend={this.state.yearsToSend}
             handleChange={this.handleChange}
           />

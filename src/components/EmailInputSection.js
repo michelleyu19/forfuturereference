@@ -3,8 +3,9 @@ import './EmailInputSectionStyles.scss';
 
 const EmailInputSection = (props) => {
   const {
-    senderFirstName, senderLastName, handleChange, recipientEmails, yearsToSend,
+    senderFirstName, senderLastName, handleChange, recipientEmails, handleRecipientEmailsChange, yearsToSend,
   } = props;
+  const index = 0;
   return (
     <form>
       <div className="horizontalInputSection">
@@ -29,18 +30,18 @@ const EmailInputSection = (props) => {
       </div>
       <br />
       <div className="horizontalInputSection">
-        <label htmlFor="email">
+        <label htmlFor="recipientEmails">
           Email:
           <input
-            name="email"
+            name="recipientEmails"
             type="text"
-            value={recipientEmails[0]}
-            onChange={handleChange}
+            value={recipientEmails[index]}
+            onChange={(e) => handleRecipientEmailsChange(e, index)}
           />
         </label>
         <label htmlFor="yearsToSend">
           Send me an email in:
-          <select value={yearsToSend} onChange={handleChange}>
+          <select name="yearsToSend" value={yearsToSend} onChange={handleChange}>
             <option value=".5">6 months</option>
             <option value="1">1 year</option>
             <option value="1.5">1.5 years</option>

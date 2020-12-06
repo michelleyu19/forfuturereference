@@ -1,21 +1,33 @@
 #selfResponsePageWhole{
   align-items: center;
   height: inherit;
+  background-image: url(../img/backgrounds/responseBackground.png);
+  background-size: cover;
+  display: flex;
+  justify-content: center;
 }
 
 .response-page {
-  background-image: url(../img/backgrounds/responseBackground.png);
-  background-size: cover;
   display: flex;
   flex-direction: column;
   align-items: center; 
   height: inherit;
   align-self: flex-start;
+  width: 55%;
 }
 
 .modal {
   position: absolute;
+  align-self: start;
   z-index: 10;
   width: 100%;
   margin-top: 5%;
+}
+
+.salutationAndClosing {
+  font-size: 30px;
+  font-style: italic;
+  color: white;
+  font-family: lavigne-display, sans-serif;
+  margin: 10px;
 }
