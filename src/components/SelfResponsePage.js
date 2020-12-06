@@ -34,36 +34,6 @@ class SelfResponsePage extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  onCheckboxClick(id) {
-    this.setState((prevState) => ({
-      questions: prevState.questions.map(
-        (el) => (el.id === id ? { ...el, checked: !prevState.questions[id].checked } : el),
-      ),
-    }));
-  }
-
-  onModalSave() {
-    console.log('before save:', this.state.questions);
-    this.setState((prevState) => ({
-      openModal: false,
-      questions: prevState.questions.map(
-        (el) => ({ ...el, show: el.checked }),
-      ),
-    }));
-    console.log('after save:', this.state.questions);
-  }
-
-  onModalQuit() {
-    console.log('before quit:', this.state.questions);
-    this.setState((prevState) => ({
-      openModal: false,
-      questions: prevState.questions.map(
-        (el) => ({ ...el, checked: el.show }),
-      ),
-    }));
-    console.log('after quit:', this.state.questions);
-  }
-
   handleChange = (event) => {
     const nam = event.target.name;
     const val = event.target.value;
@@ -95,6 +65,36 @@ class SelfResponsePage extends Component {
     };
     console.log(fields);
     db.createResponse(fields, this.props.history);
+  }
+
+  onCheckboxClick(id) {
+    this.setState((prevState) => ({
+      questions: prevState.questions.map(
+        (el) => (el.id === id ? { ...el, checked: !prevState.questions[id].checked } : el),
+      ),
+    }));
+  }
+
+  onModalSave() {
+    console.log('before save:', this.state.questions);
+    this.setState((prevState) => ({
+      openModal: false,
+      questions: prevState.questions.map(
+        (el) => ({ ...el, show: el.checked }),
+      ),
+    }));
+    console.log('after save:', this.state.questions);
+  }
+
+  onModalQuit() {
+    console.log('before quit:', this.state.questions);
+    this.setState((prevState) => ({
+      openModal: false,
+      questions: prevState.questions.map(
+        (el) => ({ ...el, checked: el.show }),
+      ),
+    }));
+    console.log('after quit:', this.state.questions);
   }
 
   render() {
