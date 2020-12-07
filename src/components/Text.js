@@ -17,16 +17,18 @@ export const WelcomeText = () => {
     // </div>
     <div>
       <div>
-        <font size="7">
-          <p><i>Reflect</i>, Remember, and <i>Repeat</i>.
-          </p>
-        </font>
-        <font size="3">
+        {/* <font size="7"> */}
+          {/* <p><i>Reflect</i>, Remember, and <i>Repeat</i>. */}
+          {/* </p> */}
+        {/* </font> */}
+        {/* <font size="3">
           <p>A tool to <i>capture</i> the present, <i>remember</i> the past, and to <i>refresh</i> your outlook on the future.
           </p>
+        </font> */}
+        <font size="7">
+          <p> A tool to <i>capture</i> the present, <i>remember</i> the past, and <i>refresh</i> your outlook on the future.
+          </p>
         </font>
-        <p> A tool to capture the present, remember the past, and refresh your outlook on the future.
-        </p>
         <p>But how? In order to prevent us from hopping on the next quick thing,
         for future reference not only captures but is also a reminder of the current circumstances in order to strengthen us and one another.
         Following a time of reflection we want to give the opportunity to give encouragement and thanks to the people who’ve helped us along the way.
@@ -38,7 +40,7 @@ export const WelcomeText = () => {
 
 // Homepage faq
 export const FaqContent = {
-  title: 'FAQ',
+  title: 'F.A.Q.',
   rows: [
     {
       title: 'How do I know my info is safe?',
@@ -84,6 +86,7 @@ export const SelfQuestionList = questions;
 
 export const AboutText = () => {
   return (
+    <font color="#FFFEE9">
     <div>
       <font size="7">
         <p>Why was For Future Reference <i>created?</i>
@@ -99,5 +102,6 @@ export const AboutText = () => {
         </p>
       </font>
     </div>
+    </font>
   );
 };

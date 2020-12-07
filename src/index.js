@@ -1,4 +1,4 @@
-import thunk from 'redux-thunk';
+// import thunk from 'redux-thunk';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './style.scss';
@@ -6,7 +6,6 @@ import './style.scss';
 import App from './components/App';
 
 ReactDOM.render(<App />, document.getElementById('main'));
-import App from './components/App';
 
 // // this creates the store with the reducers, and does some other stuff to initialize devtools
 // const store = createStore(reducers, {}, compose(
