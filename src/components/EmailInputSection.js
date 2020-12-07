@@ -3,38 +3,55 @@ import './EmailInputSectionStyles.scss';
 
 const EmailInputSection = (props) => {
   const {
-    senderName, handleChange, recipientEmails, yearsToSend,
+    senderFirstName, senderLastName, handleChange, recipientEmails, handleRecipientEmailsChange, yearsToSend,
   } = props;
+  const index = 0;
   return (
     <form>
-      <label htmlFor="senderName">
-        Dear:
-        <input
-          name="senderName"
-          type="text"
-          value={senderName}
-          onChange={handleChange}
-        />
-      </label>
+      <div className="horizontalInputSection">
+        <label className="sectionField" htmlFor="senderFirstName">
+          <span>First Name:</span>
+          <input
+            className="inputField"
+            name="senderFirstName"
+            type="text"
+            value={senderFirstName}
+            onChange={handleChange}
+          />
+        </label>
+        <label className="sectionField" htmlFor="senderLastName">
+          <span>Last Name:</span>
+          <input
+            className="inputField"
+            name="senderLastName"
+            type="text"
+            value={senderLastName}
+            onChange={handleChange}
+          />
+        </label>
+      </div>
       <br />
-      <label htmlFor="email">
-        Email:
-        <input
-          name="email"
-          type="text"
-          value={recipientEmails[0]}
-          onChange={handleChange}
-        />
-      </label>
-      <label htmlFor="yearsToSend">
-        Send me an email in:
-        <select value={yearsToSend} onChange={handleChange}>
-          <option value=".5">6 months</option>
-          <option value="1">1 year</option>
-          <option value="1.5">1.5 years</option>
-          <option value="2">2 years</option>
-        </select>
-      </label>
+      <div className="horizontalInputSection">
+        <label className="sectionField" htmlFor="recipientEmails">
+          <span>Email:</span>
+          <input
+            className="inputField"
+            name="recipientEmails"
+            type="text"
+            value={recipientEmails[index]}
+            onChange={(e) => handleRecipientEmailsChange(e, index)}
+          />
+        </label>
+        <label className="sectionField" htmlFor="yearsToSend">
+          <span>Send me an email in:</span>
+          <select className="inputField" name="yearsToSend" value={yearsToSend} onChange={handleChange}>
+            <option value=".5">6 months</option>
+            <option value="1">1 year</option>
+            <option value="1.5">1.5 years</option>
+            <option value="2">2 years</option>
+          </select>
+        </label>
+      </div>
     </form>
   );
 };

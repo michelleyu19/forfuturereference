@@ -16,7 +16,10 @@ button {
 }
 
 .yellowButton {
-  color: #FFFDEC;
+  background-color: #FFFDEC;
+  padding: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 ul {
@@ -25,6 +28,7 @@ ul {
 
 #main {
     color: black;
+    height: 100%;
 }
 
 /* MODAL */

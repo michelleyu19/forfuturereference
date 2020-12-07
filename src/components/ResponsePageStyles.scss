@@ -1,8 +1,33 @@
-.response-page {
+#selfResponsePageWhole{
+  align-items: center;
+  height: inherit;
   background-image: url(../img/backgrounds/responseBackground.png);
   background-size: cover;
   display: flex;
+  justify-content: center;
+}
+
+.response-page {
+  display: flex;
   flex-direction: column;
-  justify-content: center;   
   align-items: center; 
+  height: inherit;
+  align-self: flex-start;
+  width: 55%;
+  color: #FFFDEC;
+}
+
+.modal {
+  position: absolute;
+  align-self: start;
+  z-index: 10;
+  width: 60%;
+  margin-top: 5%;
+}
+
+.salutationAndClosing {
+  font-size: 30px;
+  font-style: italic;
+  font-family: lavigne-display, sans-serif;
+  margin: 10px;
 }

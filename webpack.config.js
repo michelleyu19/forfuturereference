@@ -1,5 +1,6 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ESLintPlugin = require('eslint-webpack-plugin');
 const autoprefixer = require('autoprefixer');
 
 const env = process.env.NODE_ENV || 'development';
@@ -12,9 +13,6 @@ module.exports = {
   output: { publicPath: '/' },
   entry: ['./src'], // this is where our app lives
   devtool: 'source-map', // this enables debugging with source in chrome devtools
-  devServer: {
-    hot: true,
-  },
   module: {
     rules: [
       {
@@ -22,7 +20,6 @@ module.exports = {
         exclude: /node_modules/,
         use: [
           { loader: 'babel-loader' },
-          { loader: 'eslint-loader' },
         ],
       },
       {
@@ -74,6 +71,7 @@ module.exports = {
       template: './src/index.html',
       filename: './200.html',
     }),
+    new ESLintPlugin(),
   ],
   devServer: {
     hot: true,
