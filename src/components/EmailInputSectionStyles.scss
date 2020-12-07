@@ -24,7 +24,18 @@ select {
 .horizontalInputSection {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   color: white;
   font-family: neue-haas-grotesk-display, sans-serif;
+  margin: 10px;
+}
+
+.sectionField {
+  display: flex;
+  flex-direction: column;
+  width: 45%;
+}
+
+.inputField {
+  width: 100%;
 }

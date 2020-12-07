@@ -9,18 +9,20 @@ const EmailInputSection = (props) => {
   return (
     <form>
       <div className="horizontalInputSection">
-        <label htmlFor="senderFirstName">
-          First Name:
+        <label className="sectionField" htmlFor="senderFirstName">
+          <span>First Name:</span>
           <input
+            className="inputField"
             name="senderFirstName"
             type="text"
             value={senderFirstName}
             onChange={handleChange}
           />
         </label>
-        <label htmlFor="senderLastName">
-          Last Name:
+        <label className="sectionField" htmlFor="senderLastName">
+          <span>Last Name:</span>
           <input
+            className="inputField"
             name="senderLastName"
             type="text"
             value={senderLastName}
@@ -30,18 +32,19 @@ const EmailInputSection = (props) => {
       </div>
       <br />
       <div className="horizontalInputSection">
-        <label htmlFor="recipientEmails">
-          Email:
+        <label className="sectionField" htmlFor="recipientEmails">
+          <span>Email:</span>
           <input
+            className="inputField"
             name="recipientEmails"
             type="text"
             value={recipientEmails[index]}
             onChange={(e) => handleRecipientEmailsChange(e, index)}
           />
         </label>
-        <label htmlFor="yearsToSend">
-          Send me an email in:
-          <select name="yearsToSend" value={yearsToSend} onChange={handleChange}>
+        <label className="sectionField" htmlFor="yearsToSend">
+          <span>Send me an email in:</span>
+          <select className="inputField" name="yearsToSend" value={yearsToSend} onChange={handleChange}>
             <option value=".5">6 months</option>
             <option value="1">1 year</option>
             <option value="1.5">1.5 years</option>

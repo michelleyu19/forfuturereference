@@ -160,7 +160,8 @@ class SelfResponsePage extends Component {
             yearsToSend={this.state.yearsToSend}
             handleChange={this.handleChange}
           />
-          <button type="button" onClick={this.handleSubmit}> Submit</button>
+          <br />
+          <button className="yellowButton" type="button" onClick={this.handleSubmit}> Submit</button>
         </div>
       </div>
     );
