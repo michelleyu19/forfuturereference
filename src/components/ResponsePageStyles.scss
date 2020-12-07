@@ -14,20 +14,20 @@
   height: inherit;
   align-self: flex-start;
   width: 55%;
+  color: #FFFDEC;
 }
 
 .modal {
   position: absolute;
   align-self: start;
   z-index: 10;
-  width: 100%;
+  width: 60%;
   margin-top: 5%;
 }
 
 .salutationAndClosing {
   font-size: 30px;
   font-style: italic;
-  color: white;
   font-family: lavigne-display, sans-serif;
   margin: 10px;
 }

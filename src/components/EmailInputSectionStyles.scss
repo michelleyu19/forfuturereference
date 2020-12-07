@@ -2,6 +2,7 @@ form {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  width: 75%;
 }
 
 input {
@@ -9,7 +10,7 @@ input {
   outline: 0;
   background: transparent;
   border-bottom: 1px solid white;
-  color: white;
+  color: #FFFDEC;
   opacity: 50%;
 }
 
@@ -17,7 +18,7 @@ select {
   border: none;
   border-bottom: 1px solid white;
   background-color: transparent;
-  color: white;
+  color: #FFFDEC;
   opacity: 50%;
 }
 
@@ -25,7 +26,6 @@ select {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  color: white;
   font-family: neue-haas-grotesk-display, sans-serif;
   margin: 10px;
 }
