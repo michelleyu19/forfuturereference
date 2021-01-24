@@ -1,146 +1,35 @@
-/* eslint-disable max-len */
-/* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react';
-import { AboutText } from './Text';
-import cute from '../img/cute.png';
-
-// NOTE: don't need justify content in css b/c it is always centered??? << this may be a sike nah!!!
+import './AboutStyles.scss';
+// import cute from '../img/cute.png'; WILL REPLACE WITH NEW PHOTOS
 
 const About = () => {
-  return (
-    <div>
-      {/* <div className="modal"> */}
-      <div className="flexbox-demo">
-        {/* <font color="#FFFDEC">
-            <div><AboutText /></div>
-          </font> */}
-        {/* <font color="#000000"> */}
-        {/* <div className="flexbox-second-level"> */}
-        {/* <div className="item" />
-              <div className="item" /> */}
-        <div><AboutText /></div>
-        <img src={cute} alt="cute" />
-        {/* </div> */}
-        {/* </font> */}
-        {/* </div> */}
+  const renderAboutText = () => {
+    return (
+      <div>
+        <div className="flexbox-demo">
+          <p className="aboutf61">Why was For Future Reference <i>created?</i></p>
+          <div className="aboutf19">
+            <p>For Future Reference started off as an idea between 4 friends who wanted to find a way to preserve our self reflections from the year 2020.</p>
+            <p>2020 is unique because the entire world is discovering that some things are truly beyond our control. The more free time we have, the more
+              time we have to think and reflect on our lives and where we’re headed towards.
+            </p>
+            <p>For Future Reference is a tool that helps people to reflect and treasure relationships with one another by sending out emails to oneself / loved ones into the future.</p>
+          </div>
+          {/* <img src={cute} alt="cute" /> */} {/* WILL REPLACE WITH NEW PHOTOS */}
+        </div>
       </div>
+    );
+  };
+  const renderFFR = () => {
+    return (
+      <div className="wAbout">forfuturereference2020</div>
+    );
+  };
+  return (
+    <div id="about">
+      <div id="aboutTextContainer">{renderAboutText()}</div>
+      <div id="aboutContactContainer">{renderFFR()}</div>
     </div>
-
-  // const About = () => {
-  //   return(
-  //         // <font  ="Neue Haas Grotesk Display Pro">
-  //         // <style>
-  //         //   c1{
-  //         //     font-family: Neue Haas Grotesk Display Pro;
-  //         //   }
-  //         // </style>
-
-  //     // <div class="flex-container">
-  //     //   <div class="flex-item">
-  //     //     <div class="flex-start">
-  //     //       <font color="#FFFDEC">
-  //     //                 {/* <font font-family="arial"> */}
-  //     //                 {/* <font size="61"> */}
-  //     //                   {/* <font weight="500"> */}
-  //     //       <h2>Why was For Future Reference <i>created?</i></h2>
-  //     //                 {/* </font> */}
-  //     //                 {/* <font size="19"> */}
-
-  //     //                   {/* <div /> */}
-  //     //                 {/* </font> */}
-  //     //                   {/* </font> */}
-  //     //                 {/* </font>     */}
-  //     //       </font>
-  //     //     </div>
-  //     //     <div class="flex-item">
-  //     //       <font color="FFFDEC">
-  //     //         <AboutText />
-  //     //       </font>
-  //     //     </div>
-  //     //   </div>
-  //     // </div>
-  //     <head>
-  //     <style>
-  //     .flex-container {
-  //       display: flex;
-  //       background-color: DodgerBlue;
-  //     }
-
-  //     .flex-container > div {
-  //       background-color: #f1f1f1;
-  //       margin: 10px;
-  //       padding: 20px;
-  //       font-size: 30px;
-  //     }
-  //     </style>
-  //     </head>
-
-  //     <body>
-
-  //       <div class="flex-container">
-  //         <div class="flex-item"><font color ="#FFFDEC">1</font></div>
-  //         <div class="flex-item" id="special"><font color ="#FFFDEC">2</font></div>
-  //         <div class="flex-item"><font color ="#FFFDEC">3</font></div>
-  //       </div>
-  //     </body>
-
-  // const About = () => {
-  //   return(
-  //         // <font  ="Neue Haas Grotesk Display Pro">
-  //         // <style>
-  //         //   c1{
-  //         //     font-family: Neue Haas Grotesk Display Pro;
-  //         //   }
-  //         // </style>
-
-  //     // <div class="flex-container">
-  //     //   <div class="flex-item">
-  //     //     <div class="flex-start">
-  //     //       <font color="#FFFDEC">
-  //     //                 {/* <font font-family="arial"> */}
-  //     //                 {/* <font size="61"> */}
-  //     //                   {/* <font weight="500"> */}
-  //     //       <h2>Why was For Future Reference <i>created?</i></h2>
-  //     //                 {/* </font> */}
-  //     //                 {/* <font size="19"> */}
-
-  //     //                   {/* <div /> */}
-  //     //                 {/* </font> */}
-  //     //                   {/* </font> */}
-  //     //                 {/* </font>     */}
-  //     //       </font>
-  //     //     </div>
-  //     //     <div class="flex-item">
-  //     //       <font color="FFFDEC">
-  //     //         <AboutText />
-  //     //       </font>
-  //     //     </div>
-  //     //   </div>
-  //     // </div>
-  //     <head>
-  //     <style>
-  //     .flex-container {
-  //       display: flex;
-  //       background-color: DodgerBlue;
-  //     }
-
-  //     .flex-container > div {
-  //       background-color: #f1f1f1;
-  //       margin: 10px;
-  //       padding: 20px;
-  //       font-size: 30px;
-  //     }
-  //     </style>
-  //     </head>
-
-  //     <body>
-
-  //       <div class="flex-container">
-  //         <div class="flex-item"><font color ="#FFFDEC">1</font></div>
-  //         <div class="flex-item" id="special"><font color ="#FFFDEC">2</font></div>
-  //         <div class="flex-item"><font color ="#FFFDEC">3</font></div>
-  //       </div>
-  //     </body>
   );
 };
 
