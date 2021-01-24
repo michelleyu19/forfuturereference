@@ -6,6 +6,7 @@ import QuestionFormItem from './QuestionFormItem';
 import QuestionListItem from './QuestionListItem';
 import QuestionListModal from './QuestionListModal';
 import { SelfQuestionList } from './Text';
+import RESPONSE_TYPES from '../constants/ResponseTypes';
 import './ResponsePageStyles.scss';
 import * as db from '../actions/index';
 
@@ -23,6 +24,7 @@ class SelfResponsePage extends Component {
       authorName: 'Your 2020 Self',
       senderFirstName: 'First Name Here',
       senderLastName: 'Last Name Here',
+      senderEmail: 'Enter your email',
       recipientEmails: ['Enter Email Address'],
       yearsToSend: '1',
     };
@@ -67,11 +69,16 @@ class SelfResponsePage extends Component {
       question: q.question, answer: q.answer,
 
     }));
+    // TODO: sender email set to first recipient email bc same for self response. Refactor
     const fields = {
-      senderName: this.state.senderName,
-      senderEmail: this.state.email,
+      addresseeName: this.state.addresseeName,
+      authorName: this.state.authorName,
+      senderFirstName: this.state.senderFirstName,
+      senderLastName: this.state.senderLastName,
+      senderEmail: this.state.recipientEmails[0],
       recipientEmails: this.state.recipientEmails,
       reflectionText: savedQuestions,
+      responseType: RESPONSE_TYPES.SELF,
       sendDate,
     };
     console.log(fields);
@@ -152,10 +159,12 @@ class SelfResponsePage extends Component {
               onChange={this.handleChange}
             />
           </label>
+          <div id="lineBreak" />
           <EmailInputSection
             senderFirstName={this.state.senderFirstName}
             senderLastName={this.state.senderLastName}
             recipientEmails={this.state.recipientEmails}
+            index={0}
             handleRecipientEmailsChange={this.handleArrayChange}
             yearsToSend={this.state.yearsToSend}
             handleChange={this.handleChange}

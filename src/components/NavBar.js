@@ -1,3 +1,4 @@
+/* eslint-disable react/style-prop-object */
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import './HomepageStyles.scss';
@@ -13,5 +14,4 @@ const NavBar = () => {
     </nav>
   );
 };
-
 export default NavBar;

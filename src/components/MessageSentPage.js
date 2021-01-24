@@ -4,7 +4,7 @@ import './MessageSentPageStyles.scss';
 const MessageSentPage = () => {
   return (
     <div className="message-sent">
-      <div>Your message was successfully sent!</div>
+      <div>Your message was successfully saved! Please check your inbox to verify your email and your message will be officially scheduled to be sent out!</div>
       <hr />
       <div>To:</div>
       <div>From:</div>
