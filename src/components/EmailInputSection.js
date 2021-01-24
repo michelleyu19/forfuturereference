@@ -5,7 +5,9 @@ const EmailInputSection = (props) => {
   const {
     senderFirstName, senderLastName, handleChange, recipientEmails, handleRecipientEmailsChange, yearsToSend,
   } = props;
-  const index = 0;
+  const index = recipientEmails.length;
+  console.log(recipientEmails);
+  // const index = 0;
   return (
     <form>
       <div className="horizontalInputSection">

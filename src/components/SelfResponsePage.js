@@ -24,7 +24,7 @@ class SelfResponsePage extends Component {
       authorName: 'Your 2020 Self',
       senderFirstName: 'First Name Here',
       senderLastName: 'Last Name Here',
-      senderEmail: 'Enter your email here',
+      senderEmail: 'Enter your email',
       recipientEmails: ['Enter Email Address'],
       yearsToSend: '1',
     };
@@ -159,10 +159,12 @@ class SelfResponsePage extends Component {
               onChange={this.handleChange}
             />
           </label>
+          <div id="lineBreak" />
           <EmailInputSection
             senderFirstName={this.state.senderFirstName}
             senderLastName={this.state.senderLastName}
             recipientEmails={this.state.recipientEmails}
+            index={0}
             handleRecipientEmailsChange={this.handleArrayChange}
             yearsToSend={this.state.yearsToSend}
             handleChange={this.handleChange}
